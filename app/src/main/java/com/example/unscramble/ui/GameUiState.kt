@@ -2,5 +2,7 @@ package com.example.unscramble.ui
 
 data class GameUiState(
     val currentScrambledWord: String = "",
-    var isGuessWordWrong: Boolean = false,
+    val currentWordCount: Int = 1,
+    val score: Int = 0,
+    val isGuessWordWrong: Boolean = false,
 )
