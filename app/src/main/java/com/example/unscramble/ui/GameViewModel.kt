@@ -32,18 +32,18 @@ class GameViewModel : ViewModel() {
 
     private fun pickRandomWordAndShuffle(): String {
         currentWord = allWords.random()
-        if(usedWord.contains(currentWord)) {
-            return pickRandomWordAndShuffle()
+        return if(usedWord.contains(currentWord)) {
+            pickRandomWordAndShuffle()
         } else {
             usedWord.add(currentWord)
-            return shuffleCurrentWord(currentWord)
+            shuffleCurrentWord(currentWord)
         }
     }
 
     private fun shuffleCurrentWord(word: String): String {
         val tempWord = word.toCharArray()
         tempWord.shuffle()
-        while (String(tempWord).equals(word)) {
+        while (String(tempWord) == word) {
             tempWord.shuffle()
         }
         return String(tempWord)
