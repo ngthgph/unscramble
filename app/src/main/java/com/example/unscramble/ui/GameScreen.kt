@@ -80,7 +80,7 @@ fun GameScreen(
             currentScrambledWord = gameUiState.currentScrambledWord,
             currentWordCount = gameUiState.currentWordCount,
             userGuess = gameViewModel.userGuess,
-            isUserGuessWrong = gameUiState.isGuessWordWrong,
+            isUserGuessWrong = gameUiState.isGuessedWordWrong,
             onUserGuessChanged = { gameViewModel.updateUserGuess(it) },
             onKeyboardDone = { gameViewModel.checkUserGuess() },
             modifier = Modifier

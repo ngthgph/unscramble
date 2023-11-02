@@ -1,7 +1,7 @@
-package com.example.unscramble.data.ui.test
+package com.example.unscramble.ui.test
 
-import com.example.unscramble.data.data.SCORE_INCREASE
-import com.example.unscramble.data.data.getUnscrambledWord
+import com.example.unscramble.data.SCORE_INCREASE
+import com.example.unscramble.data.getUnscrambledWord
 import com.example.unscramble.ui.GameViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -19,7 +19,7 @@ class GameViewModelTest {
         viewModel.checkUserGuess()
 
         currentGameUiState = viewModel.uiState.value
-        assertFalse(currentGameUiState.isGuessWordWrong)
+        assertFalse(currentGameUiState.isGuessedWordWrong)
         assertEquals(SCORE_AFTER_FIRST_CORRECT_ANSWER, currentGameUiState.score)
     }
 

@@ -59,7 +59,7 @@ class GameViewModel : ViewModel() {
             updateGameState(updatedScore)
         } else {
             _uiState.update { currentState ->
-                currentState.copy(isGuessWordWrong = true)
+                currentState.copy(isGuessedWordWrong = true)
             }
         }
         updateUserGuess("")
@@ -74,7 +74,7 @@ class GameViewModel : ViewModel() {
         if(usedWord.size == MAX_NO_OF_WORDS) {
             _uiState.update { currentState ->
                 currentState.copy(
-                    isGuessWordWrong = false,
+                    isGuessedWordWrong = false,
                     score = updatedScore,
                     isGameOver = true
                 )
@@ -85,7 +85,7 @@ class GameViewModel : ViewModel() {
                     currentScrambledWord = pickRandomWordAndShuffle(),
                     currentWordCount = currentState.currentWordCount.inc(),
                     score = updatedScore,
-                    isGuessWordWrong = false,
+                    isGuessedWordWrong = false,
                 )
             }
         }
